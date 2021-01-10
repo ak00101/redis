@@ -1,0 +1,85 @@
+topic redis
+
+1. Redis stands for remote dictionary server  is an open source,BSD licensed,advanced key-value store,where keys can contain data structure such as string,hash,list,set and sorted set.Redis can be used database,caching layer,message broker
+2.used as memory cache store to improve performance when serving data that is stored in system memory.
+3. written in c
+4. NoSql database
+
+String commands
+keys * -to show all data 
+set is used the value of key
+flushall is used remove all data
+
+setex - is used the value with expiry
+example:- setex name 10 john
+ttl command is used to see how much time is remaining for that key to live
+
+psetex- used to set expiry in milisecond
+
+setnx- is used to not overwritten the value if value already exist for key
+
+strlen-command used to check the length of value stored in key
+
+mset - command used to set multiple value
+example :mset num1 50 num2 60
+
+incr and decr- incr and decr ised to increment and decrement the value
+
+append command-
+set mykey hello
+append mykey "world"
+get mykey will return
+"hello world"
+
+Hash command
+hdel -Hdel command is used to remove specified fields
+ex:HDEL myhash field1 
+
+Hexist -command is used to check whether a hash field exists or not.
+ex:HEXISTS -HEXISTS myhash field1 
+
+HGET command is used to get the value associated with the field in the hash stored at the key
+ex-HGET myhash field1
+
+
+HGETALL command is used to get all the fields and values of the hash stored at the key
+
+HMGET command is used to get the values associated with the specified fields in the hash stored at the key. If the field does not exist in Redis hash, then a nil value is returned
+
+HSETNX command is used to set field in the hash stored at the key to value, only if the field does not yet exist. If the key does not exist, a new key holding a hash is created. If the field already exists, this operation has no effect
+
+HVALS command is used to get all the values in the hash stored at the key
+
+list command
+BLPOP command is used to remove and get the first element in a list, or block until one is available. BLPOP command just returns the first element, if available, or blocks the client for specific time to execute any command.
+
+BRPOP command
+BRPOP Removes and gets the last element in a list, or blocks until one is available
+
+LPUSH command inserts all the specified values at the head of the list stored at the key. If the key does not exist, it is created as an empty list before performing the push operations. When the key holds a value that is not a list, an error is returned.
+
+redis pub/sub-
+Redis Pub/Sub implements the messaging system where the senders (in redis terminology called publishers) sends the messages while the receivers (subscribers) receive them. The link by which the messages are transferred is called channel
+
+redis transaction-
+Redis transactions allow the execution of a group of commands in a single step. Following are the two properties of Transactions.
+
+All commands in a transaction are sequentially executed as a single isolated operation. It is not possible that a request issued by another client is served in the middle of the execution of a Redis transaction.
+
+Redis transaction is also atomic. Atomic means either all of the commands or none are processed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
